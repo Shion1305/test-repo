@@ -1,0 +1,16 @@
+name: runs-on-release-test
+on:
+  release:
+    types:
+      - released
+jobs:
+  haha-sample:
+    runs-on: ubuntu-latest
+    permission:
+      contents: read
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: echo README.md
+        run: |
+          cat README.md
